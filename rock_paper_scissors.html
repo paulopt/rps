@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+    <html>
+        <script>
+        
+        function computerPlay() {
+            let arr = ["Rock", "Paper", "Scissors"];
+            let computerSel = arr[Math.floor(Math.random()*arr.length)]
+            return computerSel;
+            }
+            
+            
+            const computerSelection = computerPlay();
+            
+            function playRound(playerSelection, computerSelection){
+                let result;
+                switch (true) {
+                
+                    case playerSelection == 'rock' && computerSelection == 'paper':
+                        result = 'lose'
+                        console.log('You lose!')
+                        break;
+                    
+                    case playerSelection == 'paper' && computerSelection == 'scissors':
+                        result = 'lose'
+                        console.log('You lose!')
+                        break;
+                    
+                    case playerSelection == 'scissors' && computerSelection == 'rock':
+                        result = 'lose'
+                        console.log('You lose!')
+                        break;    
+                    
+                    case playerSelection == 'rock' && computerSelection == 'scissors':
+                        result = 'win'
+                        console.log('You win!')
+                        break;
+                    case playerSelection == 'paper' && computerSelection == 'rock' :
+                        result = 'win'
+                        console.log('You win!')
+                        break;
+                    case playerSelection == 'scissors' && computerSelection == 'paper':
+                        result = 'win'
+                        console.log ('You win!')
+                        break;
+                    case playerSelection == computerSelection:
+                        result = 'tie'
+                        console.log ("It's a tie!") 
+                        break;
+                        
+                        default: 
+                        console.log('Pick rock, paper or scissors.')
+                    
+                                } 
+            return result;                     
+
+            }
+            
+            function game(){
+                let playerScore = 0;
+                let computerScore=0
+                let tieScore=0
+                let playerSelection = prompt ("Pick rock, paper or scissors!");
+            playerSelection = playerSelection.toLowerCase()
+              let result = playRound (playerSelection, computerSelection);
+                if (result=='win') {
+                    playerScore++;}
+               else if (result=='tie') {
+
+            
+                    tieScore++;
+               }
+                }
+                result = playRound (playerSelection, computerSelection);
+                if (result=='win') {
+                    score++
+                }
+                result = playRound (playerSelection, computerSelection);
+                if (result=='win') {
+                    score++
+                }
+                result = playRound (playerSelection, computerSelection);
+                if (result=='win') {
+                    score++
+                }
+                result = playRound (playerSelection, computerSelection);
+                if (result=='win') {
+                    score++
+                }
+                if (score>=3) {
+                    console.log('You win!')
+                }
+                
+                else {
+                    console.log('You lose. Better luck next time!')
+                }
+
+            }
+
+
+
+        </script>
+
+    
+    </html>
