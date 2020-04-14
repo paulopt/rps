@@ -3,14 +3,20 @@
         <script>
         
         function computerPlay() {
-            let arr = ["Rock", "Paper", "Scissors"];
+            let arr = ["rock", "paper", "scissors"];
             let computerSel = arr[Math.floor(Math.random()*arr.length)]
             return computerSel;
             }
             
-            
-            const computerSelection = computerPlay();
-            
+                                  
+            function userPlay()     {
+              let userSel=prompt ('Pick rock, paper or scissors.')
+              userSel= userSel.toLowerCase();
+                return userSel;
+            }
+
+          
+
             function playRound(playerSelection, computerSelection){
                 let result;
                 switch (true) {
@@ -46,47 +52,38 @@
                         result = 'tie'
                         console.log ("It's a tie!") 
                         break;
-                        
-                        default: 
-                        console.log('Pick rock, paper or scissors.')
+                           
+
                     
                                 } 
-            return result;                     
-
+            return result;                    
+            console.log(computerSelection);
             }
             
-            function game(){
-                let playerScore = 0;
-                let computerScore=0
-                let tieScore=0
-                let playerSelection = prompt ("Pick rock, paper or scissors!");
-            playerSelection = playerSelection.toLowerCase()
-              let result = playRound (playerSelection, computerSelection);
-                if (result=='win') {
-                    playerScore++;}
-               else if (result=='tie') {
 
-            
-                    tieScore++;
-               }
-                }
-                result = playRound (playerSelection, computerSelection);
+            function game() {
+                let playerScore = 0;
+                let tieScore =0;
+                let loseScore=0;
+                let result;
+                let rounds = 5;
+                
+                for (let i = 1; i <= rounds; i++) {
+                result = playRound (userPlay (), computerPlay ());}
+                
                 if (result=='win') {
-                    score++
-                }
-                result = playRound (playerSelection, computerSelection);
-                if (result=='win') {
-                    score++
-                }
-                result = playRound (playerSelection, computerSelection);
-                if (result=='win') {
-                    score++
-                }
-                result = playRound (playerSelection, computerSelection);
-                if (result=='win') {
-                    score++
-                }
-                if (score>=3) {
+                    playerScore++;
+                    console.log ('You win this round!')}
+                else if (result == 'lose') {
+                    loseScore++; console.log ('You lose this!')
+                    } 
+                else if (result == 'tie') {
+                    tieScore++; console.log ('That was a tie!')}
+                           
+
+                
+                
+                if (playerScore>=2) {
                     console.log('You win!')
                 }
                 
