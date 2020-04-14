@@ -57,40 +57,54 @@
                     
                                 } 
             return result;                    
-            console.log(computerSelection);
-            }
+                        }
             
 
             function game() {
-                let playerScore = 0;
-                let tieScore =0;
+                let playerScore=0;
+                let tieScore=0;
                 let loseScore=0;
                 let result;
                 let rounds = 5;
-                
+                let finalScore;
+                let finalResult;
                 for (let i = 1; i <= rounds; i++) {
-                result = playRound (userPlay (), computerPlay ());}
+                result = playRound (userPlay (), computerPlay ());
                 
-                if (result=='win') {
+                if (result==='win') {
                     playerScore++;
-                    console.log ('You win this round!')}
-                else if (result == 'lose') {
-                    loseScore++; console.log ('You lose this!')
+                   }
+                else if (result === 'lose') {
+                    loseScore++;
                     } 
-                else if (result == 'tie') {
-                    tieScore++; console.log ('That was a tie!')}
-                           
-
-                
-                
-                if (playerScore>=2) {
-                    console.log('You win!')
-                }
-                
-                else {
-                    console.log('You lose. Better luck next time!')
+                else if (result === 'tie') {
+                    tieScore++;}
                 }
 
+                
+                
+                if (playerScore>loseScore) {
+                   finalResult = 'You win!'
+                }
+                
+                else if (playerScore<loseScore) {
+                    finalResult = 'You lose!'
+
+                }
+                else if (playerScore==loseScore) {
+                    finalResult = 'You tied!';
+                }
+                
+                
+                finalScore = 
+      `FINAL SCORE
+      __________________
+      You won ${playerScore} times!
+      You lost ${loseScore} times!
+      You tied ${tieScore} times!
+      ${finalResult}
+      `
+      return console.log(finalScore);
             }
 
 
